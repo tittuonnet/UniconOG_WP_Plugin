@@ -1,59 +1,32 @@
-<?php function unicon_seo_content()
+<?php function unicon_og_content()
 {
   $screens = ['page', 'wporg_cpt'];
   foreach ($screens as $screen) {
     add_meta_box(
-      'unicon_seo_1XUNI_CON_71',           // Unique ID
-      'Page level SEO - Unicon',  // Box title
-      'unicon_seo_html',  // Content callback, must be of type callable
+      'unicon_og_1XUNI_CON_71',           // Unique ID
+      'Open Graph Snippets',  // Box title
+      'unicon_og_html',  // Content callback, must be of type callable
       $screen                   // Post type
     );
   }
 }
 
-function unicon_seo_html($post)
+function unicon_og_html($post)
 {
   ?>
 <main class="uniconMain">
-  <h4>Snippet Preview</h4>
-  <div class="uniconSnippetPreview">
-    <p class="uniconPreviewTitle"><a href="#">Home - Parcx.io</a></p>
-    <p class="uniconPreviewLink">https://parcx.io</p>
-    <p class="uniconPreviewDescription">Lorem ipsum dollar get nu lorem started in ipsum dollar unbiased lorem ipsum generated in 1987 founded by Lorem group of companies from ipsum town.</p>
-  </div>
-</main>
-<main class="uniconMain">
   <h4>Snippet Editor</h4>
-  <input id="PageSEO" class="uniconHidden uniconTab" type="radio" name="tabs" checked>
-  <label for="PageSEO" class="uniconTab">Page SEO</label>
-
   <input id="FacebookOG" type="radio" class="uniconHidden uniconTab" name="tabs">
   <label for="FacebookOG" class="uniconTab">Facebook Open Graph</label>
 
   <input id="TwitterCard" type="radio" class="uniconHidden uniconTab" name="tabs">
   <label for="TwitterCard" class="uniconTab">Twitter Card</label>
 
-  <section id="PageSEOContent" class="unicon">
-    <div class="row uniconRow">
-      <label class="uniconLabel">Focus Keyword</label>
-    	<input class="large-text uniconInputbox" type="text" name="page_keyword" placeholder="Focus Keyword for the page" id="page_keyword" spellcheck="true" autocomplete="off">
-    </div>
-    <div class="row uniconRow">
-      <label class="uniconLabel">Page Title</label>
-    	<input class="large-text uniconInputbox" type="text" name="page_title" placeholder="Page Title" id="page_title" spellcheck="true" autocomplete="off">
-      <label class="uniconTextLimit"><span id="pageTitleLimit">0</span> of 70 characters used</label>
-    </div>
-    <div class="row uniconRow">
-      <label class="uniconLabel">Page Description</label>
-      <textarea class="large-text uniconTextArea" name="page_description" id="page_description" placeholder="Page Description"></textarea>
-      <label class="uniconTextLimit"><span id="pageDescriptionLimit">0</span> of 160 characters used</label>
-    </div>
-  </section>
-
   <section id="FacebookOGContent" class="unicon">
     <div class="row uniconRow">
       <label class="uniconLabel">Facebook OG Title</label>
     	<input class="large-text uniconInputbox" type="text" name="facebook_og_title" placeholder="Facebook Opengraph Title" id="facebook_og_title" spellcheck="true" autocomplete="off">
+      <label class="uniconFBTextLimit"><span id="pageFBTitleLimit">0</span> of 25 characters used</label>
     </div>
     <div class="row uniconRow">
       <label class="uniconLabel">Facebook OG Image</label>
@@ -76,7 +49,8 @@ function unicon_seo_html($post)
   <section id="TwitterCardContent" class="unicon">
     <div class="row uniconRow">
       <label class="uniconLabel">Twitter card Title</label>
-    	<input class="large-text uniconInputbox" type="text" name="twitter_card_title" placeholder="Twitter card Title" id="facebook_og_title" spellcheck="true" autocomplete="off">
+    	<input class="large-text uniconInputbox" type="text" name="twitter_card_title" placeholder="Twitter card Title" id="twitter_card_title" spellcheck="true" autocomplete="off">
+      <label class="uniconTWTextLimit"><span id="pageTWTitleLimit">0</span> of 25 characters used</label>
     </div>
     <div class="row uniconRow">
       <label class="uniconLabel">Twitter card Image</label>
@@ -101,4 +75,4 @@ function unicon_seo_html($post)
 }
 
 # Metabox hook
-add_action('add_meta_boxes', 'unicon_seo_content');
+add_action('add_meta_boxes', 'unicon_og_content');

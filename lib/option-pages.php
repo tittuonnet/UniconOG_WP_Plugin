@@ -1,5 +1,5 @@
 <?php
-function unicon_seo_dashboard_page () {
+function unicon_og_dashboard_page () {
   ?>
   <div class="wrap">
     <h1>Dashboard</h1>

@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: SEO Content Plugin | Unicon.io
+Plugin Name: Open Graph Plugin | Unicon.io
 Plugin URI: https://unicon.io
-Description: Plugin to add custom Description and Title for post or pages.
+Description: Plugin to add custom Open Graph snippets to your page / post. Supports Facebook OG, Twitter Card and Google Plus Card.
 Author: <a href="https://fb.com/tittuv" target="_blank">Tittu Varghese</a>
 Version: 1.0
 */

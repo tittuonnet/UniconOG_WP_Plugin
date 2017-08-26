@@ -38,23 +38,23 @@ jQuery(document).ready(function($){
           });
       });
     // Character Remaining - Page Title
-    $('#page_title').keyup(function () {
-      remaining = 70 - $(this).val().length;
+    $('#facebook_og_title').keyup(function () {
+      remaining = 25 - $(this).val().length;
       if(remaining <= 0){
-        $("#page_title").addClass("uniconRed");
+        $("#facebook_og_title").addClass("uniconRed");
       } else {
-        $("#page_title").removeClass("uniconRed");
+        $("#facebook_og_title").removeClass("uniconRed");
       }
-      $("#pageTitleLimit").text(remaining);
+      $("#pageFBTitleLimit").text(remaining);
     });
     // Character Remaining - Page Description
-    $('#page_description').keyup(function () {
-      remaining = 160 - $(this).val().length;
+    $('#twitter_card_title').keyup(function () {
+      remaining = 25 - $(this).val().length;
       if(remaining <= 0){
-        $("#page_description").addClass("uniconRed");
+        $("#twitter_card_title").addClass("uniconRed");
       } else {
-        $("#page_description").removeClass("uniconRed");
+        $("#twitter_card_title").removeClass("uniconRed");
       }
-      $("#pageDescriptionLimit").text(remaining);
+      $("#pageTWTitleLimit").text(remaining);
     });
 });
